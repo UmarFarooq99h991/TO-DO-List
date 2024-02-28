@@ -9,8 +9,8 @@
     <section style="margin: auto; width: 30%; border: 1px solid #ccc; border-radius: 10px; padding: 30px;">
         <div>
             <h1>TO-DO List</h1>
-            <input type="text" id="inpu" placeholder="Enter List Item" style="padding: 5px; border-radius: 5px; width: 90%;">
-            <button onclick="addi()" style="padding: 5px; border-radius: 5px;">Add to List</button>
+            <input type="text" id="inpu" @keyup.enter=addi() placeholder="Enter List Item" style="padding: 5px; border-radius: 5px; width: 90%;">
+            <button onclick="addi()"  style="padding: 5px; border-radius: 5px; margin-top: 10px; font-family: Century Gothic; font-weight: bold;">Add to List</button>
         </div>
         <div id="dadi">
     
@@ -29,17 +29,18 @@
                 
                 var labe = document.createElement('input');
 labe.setAttribute('type', 'text');
-labe.style = "border: none; border-radius: 5px; padding: 5px; margin: 10px;";
+labe.style = "border: none; border-radius: 5px; padding: 5px;";
 labe.value = inpe;
 
                 var db = document.createElement('button');
-                db.textContent = "Delete"
+                db.textContent = "Delete";
+                db.style="padding: 5px; border-radius: 5px; margin-top: 10px; font-family: Century Gothic; font-weight: bold;";
                 mami.appendChild(listtem);
                 listtem.appendChild(imput);
                 listtem.appendChild(labe);
                 listtem.appendChild(db);
                 db.onclick = function() {
-                    listtem.remove();
+                listtem.remove();
                 };
                 imput.onclick = function() {
                     if (imput.checked) {
