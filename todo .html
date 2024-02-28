@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best TOdo List</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h1>TO-DO List</h1>
+            <input type="text" id="inpu" placeholder="Enter List Item" style="padding: 5px; border-radius: 5px;">
+            <button onclick="addi()" style="padding: 5px; border-radius: 5px;">Add to List</button>
+        </div>
+        <div id="dadi">
+    
+        </div>
+    </section>
+    
+    <script>
+        function addi() {
+            var inpe = document.getElementById('inpu').value.trim();
+    
+            if (inpe !== "") {
+                var mami = document.getElementById('dadi');
+                var listtem = document.createElement('li');
+                var imput = document.createElement('input');
+                imput.type = "checkbox";
+                
+                var labe = document.createElement('input');
+labe.setAttribute('type', 'text');
+labe.style = "border: none; border-radius: 5px; padding: 5px; margin: 10px;";
+labe.value = inpe;
+
+                var db = document.createElement('button');
+                db.textContent = "Delete"
+                mami.appendChild(listtem);
+                listtem.appendChild(imput);
+                listtem.appendChild(labe);
+                listtem.appendChild(db);
+                db.onclick = function() {
+                    listtem.remove();
+                };
+                imput.onclick = function() {
+                    if (imput.checked) {
+                        labe.style.textDecoration = "line-through";
+                    } else {
+                        labe.style.textDecoration = "none";
+                    }
+                };
+                document.getElementById('inpu').value = '';}}
+    </script>
+    
+    </script>
+</body>
+</html>
