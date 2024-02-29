@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Best TOdo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>TO-DO List</title>
 </head>
 
 <body>
-    <section style="margin: auto; width: 30%; border: 1px solid #ccc; border-radius: 10px; padding: 30px;">
+    <section style="margin: auto; width: 30%; border: 3px solid #ccc; border-radius: 10px; padding: 30px;">
         <div>
             <h1 style="text-align: center;">TO-DO List</h1>
             <input type="text" id="inpu" placeholder="Enter List Item" style="padding: 5px; border-radius: 5px; width: 90%;">
-            <button onclick="addi()"  style="padding: 5px; border-radius: 5px; margin-top: 10px; font-family: Century Gothic; font-weight: bold; width: 46%; margin-right:1px;">Add To List</button>
-            <button onclick="relo()" style="padding: 5px; border-radius: 5px; margin-top: 10px; font-family: Century Gothic; font-weight: bold; width: 46%; margin-left:1px;">ReFresh The List</button>
+            <button onclick="addi()" style="cursor: pointer; padding: 10px; border-radius: 5px; margin-top: 10px; font-family: Century Gothic; font-weight: bold; width: 47%; margin-right: 2%; background-color: #4CAF50; color: white; border: none; ">Add To List</button>
+            <button onclick="relo()" style="cursor: pointer; padding: 10px; border-radius: 5px; margin-top: 10px; font-family: Century Gothic; font-weight: bold; width: 47%; margin-left: 2%; background-color: #2196F3; color: white; border: none;">Refresh The List</button>
+
         </div>
     </section>
-    <section style="margin: auto; width: 30%;  padding: 30px;">
-
-        <div id="dadi"></div>
+    <section style=" margin: auto; width: 50%; padding: 10px; border-radius: 10px; border: 3px solid #ccc; text-align: center; margin-top: 30px;">
+        <div id="dadi">
+            <h1>Listed items show here</h1>
+        </div>
     </section>
+    
+    
     <script>
         function relo(){
             location.reload();
@@ -37,12 +42,12 @@
                 
                 var labe = document.createElement('input');
                 labe.setAttribute('type', 'text');
-                labe.style = "border: none; width: 55%; border-radius: 5px; padding: 5px;";
+                labe.style = "border: none; width: 65%; border-radius: 5px; padding: 5px; font-size: 15px";
                 labe.value = inpe;
 
                 var db = document.createElement('button');
                 db.textContent = "Remove";
-                db.style="margin-left: 5px; padding: 5px; border-radius: 5px; font-family: Century Gothic; font-weight: bold;";
+                db.style="margin-left: 5px; cursor: pointer; padding: 10px; border-radius: 5px; font-family: Century Gothic; font-weight: bold; background-color: #f44336; color: white; border: none";
                 mami.appendChild(listtem);
                 listtem.appendChild(imput);
                 listtem.appendChild(labe);
